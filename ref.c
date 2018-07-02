@@ -5,12 +5,14 @@
 
 struct data
 {
-	char word[256];
+	char word[16];
 	int cnt;
 };
 
 
 struct data DATA[1000];
+struct data RESULT[26];
+
 int total;
 
 
@@ -36,7 +38,6 @@ int compare_cnt( const void* a, const void* b)
 {
 	const struct data* d1 = (const struct data*)a;
 	const struct data* d2 = (const struct data*)b;
-
 	if(d1->cnt > d2->cnt)
 		return -1;
 	else if(d1->cnt < d2->cnt)
@@ -46,6 +47,27 @@ int compare_cnt( const void* a, const void* b)
 
 }
 
+void pick_maxvalue() 
+{
+	int i, idx;
+	char itr;
+
+	for(i=0;i<26;i++){
+		RESULT[i].cnt = 0;
+	}
+
+	for(i=0;i<total;i++)
+	{
+		idx = DATA[i].word[0] - 'a';
+
+		if(RESULT[idx].cnt < DATA[i].cnt)
+		{
+			strcpy(RESULT[idx].word , DATA[i].word);
+			RESULT[idx].cnt =DATA[i].cnt;
+		}	
+	}
+
+}
 
 
 int main()
@@ -66,14 +88,20 @@ int main()
 			insert_data(token);
 			token = strtok(NULL, " \n");
 		}
-		
+
 	}
 
-	qsort(DATA, total, sizeof(struct data), compare_cnt);
-
-	for(i=0;i<total;i++)
-		printf("%s %d\n", DATA[i].word, DATA[i].cnt);
+	qsort(DATA,total, sizeof(struct data), compare_cnt);
+	
 
 
-
+	pick_maxvalue();
+	
+	for(i=0;i<26;i++)
+	{
+		if(RESULT[i].cnt == 0)
+			continue;
+		else
+			printf("%s %d\n", RESULT[i].word, RESULT[i].cnt);
+	}
 }
