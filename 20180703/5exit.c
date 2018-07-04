@@ -13,7 +13,7 @@ void sig_handler(int signo) {
 		printf("%d\n", (exit_code >> 8) & 0xFF);
 }
 
-int main() {
+int main() {	// int main(int argc, char **argv, char *envp):q
 	signal(SIGCHLD, sig_handler);
 
 	for (int i = 0; i < 1000; i++) {
