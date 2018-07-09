@@ -1,0 +1,1 @@
+cmd_/root/practice/01_day/module_1.ko := arm-linux-gnueabihf-ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /root/practice/01_day/module_1.ko /root/practice/01_day/module_1.o /root/practice/01_day/module_1.mod.o ;  true
