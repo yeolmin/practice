@@ -1,4 +1,4 @@
-obj-m = my_interrupt.o
+obj-m = my_process_list.o
 
 KERNEL=/root/linux
 PWD=$(shell pwd) 

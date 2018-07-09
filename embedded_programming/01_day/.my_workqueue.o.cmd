@@ -1,8 +1,8 @@
-cmd_/root/kernel/01_day/my_interrupt.o := arm-linux-gnueabihf-gcc -Wp,-MD,/root/kernel/01_day/.my_interrupt.o.d  -nostdinc -isystem /root/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/../lib/gcc/arm-linux-gnueabihf/4.8.3/include -I./arch/arm/include -I./arch/arm/include/generated/uapi -I./arch/arm/include/generated  -I./include -I./arch/arm/include/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/kconfig.h -D__KERNEL__ -mlittle-endian -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -std=gnu89 -fno-PIE -fno-dwarf2-cfi-asm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -fno-ipa-sra -mabi=aapcs-linux -mno-thumb-interwork -mfpu=vfp -funwind-tables -marm -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -fno-delete-null-pointer-checks -O2 -Wno-maybe-uninitialized --param=allow-store-data-races=0 -DCC_HAVE_ASM_GOTO -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fno-stack-check -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes  -DMODULE  -DKBUILD_BASENAME='"my_interrupt"'  -DKBUILD_MODNAME='"my_interrupt"' -c -o /root/kernel/01_day/.tmp_my_interrupt.o /root/kernel/01_day/my_interrupt.c
+cmd_/root/kernel/01_day/my_workqueue.o := arm-linux-gnueabihf-gcc -Wp,-MD,/root/kernel/01_day/.my_workqueue.o.d  -nostdinc -isystem /root/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/../lib/gcc/arm-linux-gnueabihf/4.8.3/include -I./arch/arm/include -I./arch/arm/include/generated/uapi -I./arch/arm/include/generated  -I./include -I./arch/arm/include/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/kconfig.h -D__KERNEL__ -mlittle-endian -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -std=gnu89 -fno-PIE -fno-dwarf2-cfi-asm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -fno-ipa-sra -mabi=aapcs-linux -mno-thumb-interwork -mfpu=vfp -funwind-tables -marm -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -fno-delete-null-pointer-checks -O2 -Wno-maybe-uninitialized --param=allow-store-data-races=0 -DCC_HAVE_ASM_GOTO -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fno-stack-check -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes  -DMODULE  -DKBUILD_BASENAME='"my_workqueue"'  -DKBUILD_MODNAME='"my_workqueue"' -c -o /root/kernel/01_day/.tmp_my_workqueue.o /root/kernel/01_day/my_workqueue.c
 
-source_/root/kernel/01_day/my_interrupt.o := /root/kernel/01_day/my_interrupt.c
+source_/root/kernel/01_day/my_workqueue.o := /root/kernel/01_day/my_workqueue.c
 
-deps_/root/kernel/01_day/my_interrupt.o := \
+deps_/root/kernel/01_day/my_workqueue.o := \
   include/linux/module.h \
     $(wildcard include/config/modules.h) \
     $(wildcard include/config/sysfs.h) \
@@ -778,6 +778,6 @@ deps_/root/kernel/01_day/my_interrupt.o := \
   include/linux/gpio/consumer.h \
     $(wildcard include/config/gpio/sysfs.h) \
 
-/root/kernel/01_day/my_interrupt.o: $(deps_/root/kernel/01_day/my_interrupt.o)
+/root/kernel/01_day/my_workqueue.o: $(deps_/root/kernel/01_day/my_workqueue.o)
 
-$(deps_/root/kernel/01_day/my_interrupt.o):
+$(deps_/root/kernel/01_day/my_workqueue.o):
